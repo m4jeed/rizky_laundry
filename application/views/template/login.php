@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Halaman Login</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+  
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/AdminLTE.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/iCheck/square/blue.css">
+
+  <link rel="icon" type="image/png" href="<?php echo base_url('assets/images/icon.png');?>">
+
+  <script type="text/javascript">
+    function cekform()
+    {
+      if(!$("#username").val()){
+        alert("Maaf username harus di isi");
+        $("#username").focus();
+        return false;
+      }
+
+      if(!$("#password").val()){
+        alert("Maaf password harus di isi");
+        $("#password").focus();
+        return false;
+      }
+    }
+  </script>
+
+  <?php 
+    $info = $this->session->flashdata('msg');
+    if(!empty($info))
+    { echo $info; } ?>
+  
+</head>
+  <body class="hold-transition login-page" style="background:#0f2233">
+    <div class="login-box">
+      <div class="login-logo">
+        <a href="" style="color: #fff;"><b>RIZKY</b> LAUNDRY</a>
+      </div>
+      <!-- /.login-logo -->
+      <div class="login-box-body">
+        <p class="login-box-msg">Silahkan Masuk</p>
+
+        <form action="<?php base_url();?>login/cek_login" method="post" onsubmit="return cekform();" >
+          <div class="form-group has-feedback">
+            <input type="type" name="username" id="username" class="form-control" placeholder="Username">
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+          </div>
+          <div class="form-group has-feedback">
+            <input type="password" name="password" id="password" class="form-control" placeholder="Password">
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>  
+          </div>
+
+          <?php 
+            $info = $this->session->flashdata('info');
+            if(!empty($info))
+            { echo $info; } ?> 
+
+          <div class="row">
+            <div class="col-xs-8">
+              <div class="checkbox icheck">
+               
+              </div>
+            </div>
+            <!-- /.col -->
+            <div class="col-xs-4">
+              <button type="submit" class="btn btn-primary btn-block btn-flat"><i class="fa fa-unlock"></i> Sign In</button>
+            </div>
+            <!-- /.col -->
+          </div>
+        </form>
+
+      </div>
+      <!-- /.login-box-body -->
+    </div>
+  <!-- /.login-box -->
+    <script src="<?php echo base_url(); ?>assets/plugins/jQuery/jquery-3.1.1.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/plugins/iCheck/icheck.min.js"></script>
+  </body>
+</html>
