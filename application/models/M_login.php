@@ -8,4 +8,8 @@ class M_login extends CI_Model{
 			return $query;
 		}
 
+	public function count_all(){
+		return $this->db->count_all_results('tbl_login');
+	}
+
 }

@@ -28,7 +28,7 @@ class Kategori extends CI_Controller {
 
   }
 
-  public function tambah(){
+  public function tambah_data(){
   	$data_encode = array(
   		'nama_kategori' =>$this->input->post('nama'),
   		);
@@ -41,7 +41,7 @@ class Kategori extends CI_Controller {
   	$this->M_kategori->hapus($id);
   	echo json_encode(array("status" => TRUE));
   	redirect ('Kategori');
-  	$this->load->view('template/isi-halaman', $data);
+  	
   }
 
 }

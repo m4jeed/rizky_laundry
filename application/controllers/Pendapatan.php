@@ -16,20 +16,19 @@ class Pendapatan extends CI_Controller {
   }
 
 	public function index(){
-		$data['side'] 			='template/side';
-		$data['judul'] 			='Pendapatan';
+		$data['side'] 		='template/side';
+		$data['judul'] 		='Pendapatan';
 		$data['sub_judul']	='Data Pendapatan';
-		$data['content'] 		='pendapatan/v_pendapatan';
-		$data['hasil'] 			= $this->M_pendapatan->data_pendapatan();
+		$data['content'] 	='pendapatan/v_pendapatan';
+		$data['hasil'] 		= $this->M_pendapatan->data_pendapatan();
 		$this->load->view('template/isi-halaman', $data);
 	}
 
 	public function cek_pendapat(){
 		$data_from	= $this->input->post('datepicker_from');
-		$data_to		= $this->input->post('datepicker_to');
-		$list 			= $this->M_pendapatan->cek_pendapatan($data_from,$data_to);
-
-		$data 			= array();
+		$data_to	= $this->input->post('datepicker_to');
+		$list 		= $this->M_pendapatan->cek_pendapatan($data_from,$data_to);
+		$data 		= array();
 
 		$no=1;
 		foreach($list as $pn){

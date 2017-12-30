@@ -53,7 +53,7 @@
     	        <th width="2%">No</th>
               <th width="5%">Tanggal</th>
     	        <th width="5px">Jumlah Pelanggan</th>
-              <th width="5px">Total Harga</th>
+              <th width="5px">Total Pendapatan</th>
     	      </tr>
           </thead>
           <tbody>

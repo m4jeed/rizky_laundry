@@ -17,10 +17,10 @@ class Pelanggan extends CI_Controller {
 
 	public function index()
 	{
-		$data['side'] 			='template/side';
-		$data['judul'] 			='Pelanggan';
+		$data['side'] 		='template/side';
+		$data['judul'] 		='Pelanggan';
 		$data['sub_judul']	='Data Pelanggan';
-		$data['content'] 		='pelanggan/v_pelanggan';
+		$data['content'] 	='pelanggan/v_pelanggan';
 		$data['pelanggan'] 	= $this->M_pelanggan->data_pelanggan();
 		$this->load->view('template/isi-halaman', $data);
 	}
@@ -33,78 +33,98 @@ class Pelanggan extends CI_Controller {
 		foreach($data->result() as $row){
 		$arr['query'] = $keyword;
 		$arr['suggestions'][] = array(
-				'value'				=>$row->nama_barang, //buat nampilin autocompletenya, ambil data dr fieldnya
+				'value'			=>$row->nama_barang, //buat nampilin autocompletenya, ambil data dr fieldnya
 				'jml_barang'	=>$row->nama_barang, //buat nampilin autocompletenya, ambil data dr fieldnya
-				'harga'				=>$row->harga
+				'harga'			=>$row->harga
 			);
 		}
 		echo json_encode($arr);
 		//echo json_encode($this->db->last_query()); //buat var_dump
 	}
 
-	public function select(){
-		$data= $this->input->post($vals);
-		if ($vals =='satuan'){
-			$query= $this->db->query("SELECT * FROM `barang` WHERE id_kategori=2"); //SELECT * FROM barang WHERE id_kategori LIKE 2
-    	return $query->result($data);
-		}else{
-			$query= $this->db->query("SELECT * FROM `barang` WHERE id_kategori=1"); //SELECT * FROM barang WHERE id_kategori LIKE 2
-    	return $query->result($data);
-		}
+	// public function select(){
+	// 	$data= $this->input->post($vals);
+	// 	if ($vals =='satuan'){
+	// 		$query= $this->db->query("SELECT * FROM `barang` WHERE id_kategori=1"); //SELECT * FROM barang WHERE id_kategori LIKE 2
+ //    	return $query->result($data);
+	// 	}else{
+	// 		$query= $this->db->query("SELECT * FROM `barang` WHERE id_kategori=2"); //SELECT * FROM barang WHERE id_kategori LIKE 2
+ //    	return $query->result($data);
+ //    }
+	// 	// }else if{
+	// 	// 	$query= $this->db->query("SELECT * FROM `barang` WHERE id_kategori=3"); //SELECT * FROM barang WHERE id_kategori LIKE 2
+ //  //   	return $query->result($data);
+	// 	// }else if{
+	// 	// 	$query= $this->db->query("SELECT * FROM `barang` WHERE id_kategori=4"); //SELECT * FROM barang WHERE id_kategori LIKE 2
+ //  //   	return $query->result($data);
+	// 	// }else if{
+	// 	// 	$query= $this->db->query("SELECT * FROM `barang` WHERE id_kategori=5"); //SELECT * FROM barang WHERE id_kategori LIKE 2
+ //  //   	return $query->result($data);
+	// 	// }else if{
+	// 	// 	$query= $this->db->query("SELECT * FROM `barang` WHERE id_kategori=6"); //SELECT * FROM barang WHERE id_kategori LIKE 2
+ //  //   	return $query->result($data);
+	// 	// }else{
+	// 	// 	$query= $this->db->query("SELECT * FROM `barang` WHERE id_kategori=7"); //SELECT * FROM barang WHERE id_kategori LIKE 2
+ //  //   	return $query->result($data);
+	// 	// }
 		
-		echo json_encode($data);		
+	// 	echo json_encode($data);		
 
-	}
+	// }
 
-	public function seleksi_data(){
-		$data['side'] 			='template/side';
-		$data['judul'] 			='Pelanggan';
-		$data['sub_judul']	='Form Data Pelanggan';
-		$data['content'] 		='pelanggan/form_pelanggan';
-		//$data['selek_data'] 		= $this->M_barang->dataSeleksi();
-		$id_opsi = $this->input->post('nama_opsi');
-		//var_dump($jml);die;
-		$ambil=array('nama_barang'=>$jml);
+	// public function seleksi_data(){
+	// 	$data['side'] 			='template/side';
+	// 	$data['judul'] 			='Pelanggan';
+	// 	$data['sub_judul']	    ='Form Data Pelanggan';
+	// 	$data['content'] 		='pelanggan/form_pelanggan';
+	// 	//$data['selek_data'] 		= $this->M_barang->dataSeleksi();
+	// 	$id_opsi = $this->input->post('nama_opsi');
+	// 	//var_dump($jml);die;
+	// 	$ambil=array('nama_barang'=>$jml);
 		
-		$data1=$this->M_pelanggan->seleksi($id_opsi);
-		$this->load->view('template/isi-halaman', $data);
-	}
+	// 	$data1=$this->M_pelanggan->seleksi($id_opsi);
+	// 	$this->load->view('template/isi-halaman', $data);
+	// }
 
 	public function tambah_pelanggan(){
 		$this->load->model('M_kategori');
 
 		$data['side'] 			='template/side';
 		$data['judul'] 			='Pelanggan';
-		$data['sub_judul']	='Form Pelanggan';
+		$data['sub_judul']	    ='Form Pelanggan';
 		$data['content'] 		='pelanggan/form_pelanggan';
-		$data['data_select']= $this->M_kategori->data_kategori();
+		$data['data_select']    = $this->M_kategori->data_kategori();
 		$this->load->view('template/isi-halaman', $data);
 	}
 
 	public function simpan(){
 		$data['side'] 			='template/side';
 		$data['judul'] 			='Pelanggan';
-		$data['sub_judul']	='Form Data Pelanggan';
+		$data['sub_judul']	    ='Form Data Pelanggan';
 		$data['content'] 		='pelanggan/form_pelanggan';
 		//$id = $this->input->post('id_jenis')
 
-		$pelanggan  = $this->input->post('pelanggan');
-		$alamat 	  = $this->input->post('alamat');
-		$jml_barang = $this->input->post('jml_barang');
-		$qty 				= $this->input->post('jml_qty');
+		$pelanggan  	= $this->input->post('pelanggan');
+		$alamat 	 	= $this->input->post('alamat');
+		// $kategori 		= $this->input->post('kategori');
+		$jml_barang 	= $this->input->post('jml_barang');
+		$jml_qty 		= $this->input->post('jml_qty');
 		//print_r($jml_barang);die();
 		$tanggal 		= $this->input->post('tgl_terima');
-		$tgl_keluar = $this->input->post('tgl_keluar');
+		$tgl_keluar 	= $this->input->post('tgl_keluar');
 		$harga 	 		= $this->input->post('harga');
+		$total			= $this->input->post('harga_total');
 		//var_dump($tgl_keluar);die;
 		$param = array(
 	    'pelanggan'   	=>$pelanggan,
 	    'alamat'        =>$alamat,
-	    'jml_barang' 		=>$jml_barang,
-	    'jml_qty'				=>$qty,
+	    // 'kategori'		=>$kategori,
+	    'jml_barang' 	=>$jml_barang,
+	    'jml_qty'		=>$jml_qty,
 	    'tgl_terima'    =>$tanggal,
 	    'tgl_keluar'    =>$tgl_keluar,
-	    'harga'    			=>$harga
+	    'harga'    		=>$harga,
+	    'harga_total' 	=>$total
 	    );
 		$query=$this->M_pelanggan->simpan_data($param);
     $this->load->view('template/isi-halaman', $data);

@@ -1,0 +1,4 @@
+
+akses halaman login:http://localhost/rizky_laundry/login
+username :admin
+password :admin

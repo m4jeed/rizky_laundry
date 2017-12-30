@@ -7,7 +7,8 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-  
+  <!-- icon url -->
+  <link rel="icon" type="image/png" href="<?php echo base_url('assets/images/admin.jpeg');?>">
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
@@ -16,8 +17,12 @@
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/AdminLTE.min.css">
   <!-- iCheck -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/iCheck/square/blue.css">
-
-  <link rel="icon" type="image/png" href="<?php echo base_url('assets/images/icon.png');?>">
+  <!-- <style type="text/css">
+    body  {
+      background-image: url("admin.jpeg");
+      background-color: #0f2233;
+  }
+  </style> -->
 
   <script type="text/javascript">
     function cekform()
@@ -42,14 +47,14 @@
     { echo $info; } ?>
   
 </head>
-  <body class="hold-transition login-page" style="background:#0f2233">
+  <body class="hold-transition login-page" style="background-image:url('<?php echo base_url();?>/assets/images/bg.jpeg');">
     <div class="login-box">
       <div class="login-logo">
-        <a href="" style="color: #fff;"><b>RIZKY</b> LAUNDRY</a>
+        <a href="" style="color:#2F4F4F;"><b>MIWA RENGGINANG</b></a>
       </div>
       <!-- /.login-logo -->
       <div class="login-box-body">
-        <p class="login-box-msg">Silahkan Masuk</p>
+        <p class="login-box-msg">Welcome to Login</p>
 
         <form action="<?php base_url();?>login/cek_login" method="post" onsubmit="return cekform();" >
           <div class="form-group has-feedback">
@@ -68,9 +73,6 @@
 
           <div class="row">
             <div class="col-xs-8">
-              <div class="checkbox icheck">
-               
-              </div>
             </div>
             <!-- /.col -->
             <div class="col-xs-4">

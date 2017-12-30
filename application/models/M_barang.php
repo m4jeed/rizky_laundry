@@ -8,6 +8,14 @@ class M_barang extends CI_Model {
     
     }
 
+  public function count_alls(){
+    return $this->db->count_all_results('barang');
+  }
+
+  public function getkode($data){
+    return $this->db->get_where('barang', array('kode_barang'=>$data));
+  }
+
   public function data_barang(){
   	/*$data = $this->db->query("SELECT barang.id_barang,barang.nama_barang, kategori_barang.nama_kategori, barang.harga from barang 
   		INNER JOIN kategori_barang ON barang.id_kategori=kategori_barang.id_kategori");

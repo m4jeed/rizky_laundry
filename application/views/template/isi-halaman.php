@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Rizky Laundry</title>
+  <title>Miwa BOSS AUM</title>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <link rel="icon" type="image/png" href="<?php echo base_url('assets/images/icon.png');?>">
+  <link rel="icon" type="image/png" href="<?php echo base_url('assets/images/admin.jpeg');?>">
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
@@ -17,19 +17,18 @@
 
   
   <link href='<?php echo base_url();?>assets/plugins/autocomplete/js/jquery.autocomplete.css' rel='stylesheet' />
-  <!-- <link href='<?php //echo base_url();?>assets/plugins/autocomplete/css/default.css' rel='stylesheet' /> -->
   <!-- Google Font -->
   <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">-->
 </head>
-  <body class="hold-transition skin-blue sidebar-mini">
+  <body class="hold-transition skin-red sidebar-mini">
     <div class="wrapper">
 
       <header class="main-header">
-        <a href="<?php echo base_url('dashboard'); ?>" class="logo" style="background-color:green;">
+        <a href="<?php echo base_url('dashboard'); ?>" class="logo" style="background-color:#8B0000;">
           
-          <span class="logo-lg">RIZKY LAUNDRY</span>
+          <span class="logo-lg">MIWA RENGGINANG</span>
         </a>
-        <nav class="navbar navbar-static-top" style="background-color:#00a65a;">
+        <nav class="navbar navbar-static-top" style="background-color:#B22222;">
           <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
@@ -116,7 +115,7 @@
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <img src="<?php echo base_url(); ?>assets/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                  <img src="<?php echo base_url(); ?>assets/images/admin.jpeg" class="user-image" alt="User Image">
                   <span class="hidden-xs">Hai <?php echo $this->session->userdata('level'); ?></span>
                 </a>
                 <ul class="dropdown-menu">
@@ -171,6 +170,7 @@
         <!-- Main content -->
         <section class="content">
           <?php $this->load->view($content); ?> 
+          
           <!-- /.row -->
         </section>
         <!-- /.content -->
@@ -180,7 +180,7 @@
         <div class="pull-right hidden-xs">
           
         </div>
-        <strong>Copyright &copy; 1919-2017 <a href="https://www.linkedin.com/in/abdul-majeed">Rizky Laundry</a>.</strong> All rights
+        <strong>Copyright &copy; 2017 <a href="https://www.linkedin.com/in/abdul-majeed">Miwa Rengginang</a>.</strong> All rights
         reserved.
       </footer>
 

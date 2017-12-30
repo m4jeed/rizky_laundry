@@ -6,15 +6,15 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="<?php echo base_url(); ?>assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="<?php echo base_url(); ?>assets/images/admin.jpeg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p><?php echo $this->session->userdata('level'); ?></p>
-          <!-- <a href="#"><i class="fa fa-circle text-success"></i> Online</a> -->
+          <a href=""><i class="fa fa-circle text-success"></i>miwa rengginang</a>
         </div>
       </div>
       <!-- search form -->
-      <form action="#" method="get" class="sidebar-form">
+      <!-- <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="Search...">
               <span class="input-group-btn">
@@ -22,14 +22,15 @@
                 </button>
               </span>
         </div>
-      </form>
+      </form> -->
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">MAIN NAVIGATION</li>
+        <li class="header">HALAMAN MIWA RENGGINANG</li>
+        <!-- <?php if($this->session->userdata('level') == 'member'){ ?>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-laptop"></i> <span>MASTER DATA</span>
+            <i class="fa fa-laptop"></i> <span>DATA MIWA</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -42,81 +43,68 @@
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-th"></i> <span>MASTER BARANG</span>
+            <i class="fa fa-th"></i> <span>PRODUK MIWA</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url('Barang'); ?>" ><i class="fa fa-circle-o text-yellow"></i>Data Barang</a></li>
-            <li><a href="<?php echo base_url('Kategori'); ?>" ><i class="fa fa-circle-o text-yellow"></i>Kategori</a></li>
+            <li><a href="<?php echo base_url('Barang'); ?>" ><i class="fa fa-briefcase text-yellow"></i>Data Miwa</a></li>
+            <li><a href="<?php echo base_url('Kategori'); ?>" ><i class="fa fa-cube text-yellow"></i>Kategori</a></li>
+          </ul>
+        </li>
+        <?php }else{ ?> -->
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>PENGGUNA MIWA</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <!-- <li><a href="../../index.html"><i class="fa fa-user text-red"></i>Data Karyawan</a></li> -->
+            <li><a href="<?php echo base_url('Pelanggan'); ?>"><i class="fa fa-bar-chart text-red"></i>Data Pelanggan</a></li>
           </ul>
         </li>
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-pie-chart"></i> <span>LAP.KEUANGAN</span>
+            <i class="fa fa-pie-chart"></i> <span>PRODUK MIWA</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url('Pendapatan'); ?>"><i class="fa fa-circle-o text-blue"></i>Pendapatan</a></li>
-            <li><a href="<?php echo base_url('pengeluaran'); ?>"><i class="fa fa-circle-o text-blue"></i>Pengeluaran</a></li>
+            <li><a href="<?php echo base_url('Barang'); ?>" ><i class="fa fa-briefcase text-yellow"></i>Data Miwa</a></li>
+            <li><a href="<?php echo base_url('Kategori'); ?>" ><i class="fa fa-cube text-yellow"></i>Kategori</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-money"></i> <span>LAP.KEUANGAN</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo base_url('Pendapatan'); ?>"><i class="fa fa-area-chart text-blue"></i>Pendapatan</a></li>
+            <!-- <li><a href="<?php //echo base_url('pengeluaran'); ?>"><i class="fa fa-circle-o text-blue"></i>Pengeluaran</a></li> -->
           </ul>
         </li>
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-pie-chart"></i> <span>REPORT DATA</span>
+            <i class="fa fa-pencil-square-o"></i> <span>REPORT MIWA</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url('Report'); ?>"><i class="fa fa-circle-o text-green"></i>Report</a></li>
+            <li><a href="<?php echo base_url('Report'); ?>"><i class="fa fa-print text-green"></i>Report</a></li>
           </ul>
         </li>
-
-        <!-- <li class="treeview">
-          <a href="#">
-            <i class="fa fa-share"></i> <span>Multilevel</span>
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
-            <li class="treeview">
-              <a href="#"><i class="fa fa-circle-o"></i> Level One
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
-                <li class="treeview">
-                  <a href="#"><i class="fa fa-circle-o"></i> Level Two
-                    <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
-          </ul>
-        </li> -->
-        
+        <?php } ?>
       </ul>
       
     </section>
-
-  <!-- </aside> udah ada di isi halaman--> 
-    <!-- /.sidebar -->
-
   

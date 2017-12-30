@@ -9,8 +9,12 @@ class M_pelanggan extends CI_Model {
     $this->load->model('M_pelanggan');
   }
 
+  public function count_all(){
+    return $this->db->count_all_results('pelanggan');
+  }
+
 	public function data_pelanggan(){
-    	$data=$this->db->query("SELECT DATE_FORMAT(tgl_terima,'%d-%m-%Y') as tgl_terima,pelanggan,alamat,jml_barang,jml_qty,harga,id_pelanggan FROM pelanggan"); //select DATE_FOTMAT(tgl,'%d-%m-%Y') from tbl1
+    	$data=$this->db->query("SELECT DATE_FORMAT(tgl_terima,'%d-%m-%Y') as tgl_terima,pelanggan,alamat,jml_barang,jml_qty,harga,harga_total,id_pelanggan FROM pelanggan"); //select DATE_FORMAT(tgl,'%d-%m-%Y') from tbl1
         return $data->result();
   }
 

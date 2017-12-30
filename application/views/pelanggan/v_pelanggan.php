@@ -1,8 +1,8 @@
 
-    <div class="box box-success">
+    <div class="box box-danger">
       <div class="box-header">
-      <h3 class="box-title">Data Pelanggan Laundry</h3>
-          <a href="<?php echo base_url();?>pelanggan/tambah_pelanggan" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Tambah</a> 
+      <h3 class="box-title">Data Pelanggan Miwa Rengginang</h3>
+          <a href="<?php echo base_url();?>pelanggan/tambah_pelanggan" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Tambah</a> 
       </div>
       <!-- /.box-header -->
       <div class="box-body">
@@ -15,6 +15,7 @@
               <th width="5%">Tanggal Terima</th>
               <!-- <th>Tanggal Keluar</th> -->
               <th width="5%">Barang</th>
+              <!-- <th width="5%">Paket</th> -->
               <th width="5%">Jumlah</th>
               <th width="5%">Total</th>
     	        <th width="10%"><center>Aksi</center></th>
@@ -31,11 +32,12 @@
           <td><?php echo $p->alamat ?></td>
           <td><?php echo $p->tgl_terima ?></td>
           <td><?php echo $p->jml_barang ?></td>
+          <!-- <td><?php echo $p->kategori ?></td> -->
           <td><?php echo $p->jml_qty ?></td>
-          <td><?php echo $p->harga ?></td>
+          <td><?php echo $p->harga_total ?></td>
           <td>
-          	<center><a href="" class="btn btn-warning"><i class="fa fa-edit"></i></a>
-    				<a class="btn btn-danger" href="<?php echo base_url(); ?>Pelanggan/hapus/<?php echo $p->id_pelanggan;?>" onclick="return confirm('Anda yakin akan menghapus data ini.');"><i class="fa fa-trash"></i></a></center> 
+          	<center><a href="" class="btn btn-info"><i class="fa fa-edit"></i></a>
+    				<a class="btn btn-warning" href="<?php echo base_url(); ?>Pelanggan/hapus/<?php echo $p->id_pelanggan;?>" onclick="return confirm('Anda yakin akan menghapus data ini.');"><i class="fa fa-trash"></i></a></center> 
     		  </td>
 
           </tr>

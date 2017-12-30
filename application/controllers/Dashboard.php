@@ -13,13 +13,20 @@ class Dashboard extends CI_Controller {
 		//redirect(base_url('login')); //sama-sama
 		redirect('login');
 		} 
+		//$this->load->model('master/user_model','user');
+		$this->load->model('M_barang');
+		$this->load->model('M_pelanggan');
+		$this->load->model('M_login');
 	}
 
 	public function index() {
 		$data['side'] 			='template/side';
 		$data['judul'] 			='Dashboard';
-		$data['sub_judul']	='dashboard';
+		$data['sub_judul']		='dashboard';
 		$data['content'] 		='template/content';
+		$data['count_barang'] 	= $this->M_barang->count_alls();
+		$data['count_pelanggan']= $this->M_pelanggan->count_all();
+		$data['count_user']		= $this->M_login->count_all();
 		$this->load->view('template/isi-halaman', $data);
 	}
 

@@ -1,3 +1,4 @@
+<link rel="icon" type="image/png" href="<?php echo base_url('assets/images/admin.jpeg');?>">
 <div class="box box-success">
   <div class="box-header">
   <h3 class="box-title">Data Report Pelanggan</h3>

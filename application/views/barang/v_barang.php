@@ -1,7 +1,7 @@
-  <div class="box box-success">
+  <div class="box box-danger">
       <div class="box-header">
-      <h3 class="box-title">Data Barang Laundry</h3>
-          <a href="<?php echo base_url();?>barang/tambah_barang" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Tambah</a> 
+      <h3 class="box-title">Data Produk Miwa Rengginang</h3>
+          <a href="<?php echo base_url();?>barang/tambah_barang" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Tambah</a> 
       </div>
       <!-- /.box-header -->
       <div class="box-body">
@@ -9,7 +9,7 @@
           <thead>
     	      <tr>
     	        <th width="2%">No</th>
-              <th width="2%">Kode Barang</th>
+              <th width="2%">Kode</th>
     	        <th>Nama Barang</th>
     	        <th>Kategori</th>
               <th>Harga</th>
@@ -29,8 +29,8 @@
           <td><?php echo $b->harga ?></td>
           <td>
           <!-- <a href="<?php //echo base_url(); ?>buku/buku_edit?id=<?php //echo $buku->id; ?>">Edit</a> --> 
-          	<center><a href="<?php echo base_url();?>barang/edit?id_barang=<?php echo $b->id_barang; ?>" class="btn btn-warning"><i class="fa fa-edit"></i></a>
-    				<a href="" class="btn btn-danger"><i class="fa fa-trash"></i></a></center>
+          	<center><a href="<?php echo base_url();?>barang/edit?id_barang=<?php echo $b->id_barang; ?>" class="btn btn-info"><i class="fa fa-edit"></i></a>
+    				<a href="" class="btn btn-warning"><i class="fa fa-trash"></i></a></center>
     		  </td>
 
           </tr>

@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class M_kategori extends CI_Model {
-	var $table = 'kategori_barang';
+	var $table = 'kategori_barang'; //hilangkan gak ngaruh juga
 
 	function __construct(){
         parent::__construct();

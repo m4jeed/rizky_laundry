@@ -20,7 +20,7 @@ class Report extends CI_Controller {
 		
 		$data['side'] 			='template/side';
 		$data['judul'] 			='Report';
-		$data['sub_judul']	='Data Report';
+		$data['sub_judul']	    ='Data Report';
 		$data['content'] 		='report/v_report';
 		$data['cetak'] 	= $this->M_report->cetak_data();
 		$this->load->view('template/isi-halaman', $data);
@@ -28,12 +28,14 @@ class Report extends CI_Controller {
 	}
 
 	public function cetakpdf(){
-		$this->load->library('tcpdf/tcpdf.php');
-		//$query=$this->db->query("SELECT pelanggan,alamat,jml_barang,tgl_terima,tgl_keluar,harga FROM pelanggan")->result();
-    //print_r($query);
-    $judul = 'Laporan Pelanggan';
-
-		$pdf = new TCPDF('L', 'mm', 'A4', true, 'UTF-8', false);
+		$this->load->helper('pdf_helper');
+		//$this->load->helper('pdf'); bisa krn extend pdf_helper
+		$query=$this->db->query("SELECT pelanggan,alamat,jml_barang,tgl_terima,tgl_keluar,harga FROM pelanggan")->result();
+   // print_r($query);die();
+		tcpdf();
+    	$judul = 'Laporan Data Pelanggan Pesanan';
+        //$pdf = new TCPDF('P', 'mm', 'A4', true, 'UTF-8', false);
+		$pdf = new TCPDF('P', 'mm', 'A4', true, 'UTF-8', false);
 		$pdf->SetTitle('Laporan Pelanggan');
 		$pdf->SetPrintHeader(false);
 		$pdf->SetPrintFooter(false);
@@ -46,12 +48,12 @@ class Report extends CI_Controller {
 
 		$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 011', 
        PDF_HEADER_STRING);
-    $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
-    $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
-    $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-    $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
-    $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
-		
+	    $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
+	    $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
+	    $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+	    $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+	    $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
+			
 		$pdf->AddPage();
 		$query = $this->M_report->cetak_pdf();
 		$pdf->Cell(0,30, $judul, 0, 2, 'C', 0,FALSE);
@@ -90,9 +92,9 @@ class Report extends CI_Controller {
 		//$this->load->view('template/isi-halaman', $data);
 	}
 
-	public function report_pdf(){
+	// public function report_pdf(){
 
-    $data=$this->M_report->cetakpdf();
-	}
+ //    $data=$this->M_report->cetakpdf();
+	// }
 
 }

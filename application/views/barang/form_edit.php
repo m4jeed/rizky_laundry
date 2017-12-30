@@ -1,8 +1,8 @@
 
 <div class="col-md-50">  
-  <div class="box box-success">
+  <div class="box box-danger">
 <div class="box-header with-border">
-    <h3 class="box-title">Form Edit Barang</h3>
+    <h3 class="box-title">Form Edit Miwa Rengginang</h3>
   </div>
   <!-- /.box-header -->
   <!-- form start -->
@@ -12,7 +12,7 @@
           <label class="col-sm-2 control-label">Kode Barang</label>
           <div class="col-sm-2">
             <input type="hidden" name="id_barang" value="<?php echo $barang[0]->id_barang; ?>">
-            <input type="text" name="kode" id="kode" value="<?php echo $barang[0]->kode_barang; ?>" class="form-control"  placeholder="kode">
+            <input type="text" name="kode" id="kode" value="<?php echo $barang[0]->kode_barang; ?>" class="form-control"  placeholder="kode" redonly>
           </div>
         </div>
 
@@ -47,10 +47,10 @@
           </div>
         </div>
 
-        <div class="form-group">
+        <div class="modal-footer">
           <div class="col-sm-offset-2 col-sm-10">
-            <a href="<?php echo base_url('Barang');?>" class="btn btn-warning pull-right"> <i class="fa fa-repeat"></i> Batal</a>
-            <button type="submit" class="btn btn-info pull-right"><i class="fa fa-save"></i> Simpan</button>
+            <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Simpan</button>
+            <button type="" class="btn btn-warning pull-right"><a href="<?php echo base_url('Barang');?>"  style="color:white;"> <i class="fa fa-repeat"></i> Kembali</a></button>
           </div>
         </div>
       </div>

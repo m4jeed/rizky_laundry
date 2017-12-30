@@ -1,3 +1,5 @@
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<link rel="icon" type="image/png" href="<?php echo base_url('assets/images/admin.jpeg');?>">
 <head>
   <style>
     table{
